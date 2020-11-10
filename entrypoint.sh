@@ -41,6 +41,7 @@ fi
 
 echo "Adding git commit"
 git fetch
+git pull
 git add .
 if git status | grep -q "Changes to be committed"
 then
