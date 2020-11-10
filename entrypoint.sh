@@ -41,13 +41,12 @@ fi
 
 echo "Adding git commit"
 git fetch
-git pull
 git add .
 if git status | grep -q "Changes to be committed"
 then
   git commit --message "Update"
   echo "Pushing git commit"
-  git push -u origin HEAD:$OUTPUT_BRANCH
+  git push -u origin HEAD:$OUTPUT_BRANCH -f
 else
   echo "No changes detected"
 fi
