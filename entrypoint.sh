@@ -39,10 +39,11 @@ then
 fi
 
 echo "Adding git commit"
+git fetch
 git add .
 if git status | grep -q "Changes to be committed"
 then
-  git commit --message $INPUT_COMMIT_MESSAGE
+  git commit --message "Update"
   echo "Pushing git commit"
   git push -u origin HEAD:$OUTPUT_BRANCH
 else
